@@ -15,8 +15,14 @@ var io = require("socket.io-client")("http://10.0.0.8:3000");
 	     terminal:false,
 	     output:process.stdout
      });
+     var i = 0
      rl.on("line", function(ln) {
-	     io.emit("my other event", ln);
+	     i++
+	     if(i>0){
+	     io.emit("my other event", name+ln);
+	     }else{
+	     var name=ln;
+	     }
 
      });
      	io.on("news", function(dat) {
