@@ -1,5 +1,5 @@
  
-var io = require("socket.io-client")("http://localhost:3000");
+var io = require("socket.io-client")("http://10.0.0.8:3000");
 //var socket = io();
  /*     $('form').submit(function(){
         socket.emit('chat message', $('#m').val());
