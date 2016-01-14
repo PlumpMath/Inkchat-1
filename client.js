@@ -28,7 +28,7 @@ var io = require("socket.io-client")("http://10.0.0.8:3000");
 
      });
      	io.on("news", function(dat) {
-		console.log("chatted:",dat);
+		console.log(dat);
       //io.emit("my other event","I loged on");
 		});
 
