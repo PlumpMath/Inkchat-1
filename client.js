@@ -41,7 +41,7 @@ var stringmultiply = function(str,rep) {
 		if (!q){
 			console.log("WARN:no name found");
 			//console.log(dat)
-		}else if(q[0] != name+":"){
+		}else if(q[0] != name+":" && name != ""){
 			console.log("\r"+stringmultiply(" ",name.length+2)+"\r"+dat);
 	     		process.stdout.write(name+": ");
 			
