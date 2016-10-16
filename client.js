@@ -24,25 +24,27 @@ var stringmultiply = function(str,rep) {
      });
      var i = 0;
      var name="";
-     process.stdout.write("name:")
+     process.stdout.write("group: ")
      rl.on("line", function(ln) {
 	    	     i++;
-	     if (i>1) {
-	     	io.emit("message to server", name+": "+ln);
-	     } else {
+	     if (i>2) {
+	     	io.emit("message to server", {string:name+": "+ln,message:ln,name:name,group:group});
+		process.stdout.write(name+": ");
+	     } else if(i>1) {
 	     	name=ln;
+		process.stdout.write(name+": ");
+	     } else {
+		group = ln;
+		process.stdout.write("name: ");
 	     }
-	     process.stdout.write(name+": ");
 
 
      });
      	io.on("message to client", function(dat) {
-		var q = dat.match(/^\w+\:/);
-		if (!q){
+		if (!dat.name){
 			console.log("WARN:no name found");
-			//console.log(dat)
-		}else if(q[0] != name+":" && name != ""){
-			console.log("\r"+stringmultiply(" ",name.length+2)+"\r"+dat);
+		}else if(dat.name != name && name != "" && dat.group == group){
+			console.log("\r"+stringmultiply(" ",name.length+2)+"\r"+dat.string);
 	     		process.stdout.write(name+": ");
 			
 		}
