@@ -28,7 +28,7 @@ var stringmultiply = function(str,rep) {
      rl.on("line", function(ln) {
 	    	     i++;
 	     if (i>1) {
-	     	io.emit("my other event", name+": "+ln);
+	     	io.emit("message to server", name+": "+ln);
 	     } else {
 	     	name=ln;
 	     }
@@ -36,7 +36,7 @@ var stringmultiply = function(str,rep) {
 
 
      });
-     	io.on("news", function(dat) {
+     	io.on("message to client", function(dat) {
 		var q = dat.match(/^\w+\:/);
 		if (!q){
 			console.log("WARN:no name found");

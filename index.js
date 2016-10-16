@@ -19,7 +19,7 @@ function handler (req, res) {
 
 io.on('connection', function (socket) {
   //socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    io.emit("news",data);
+  socket.on('message to server', function (data) {
+    io.emit("message to client",data);
   });
 });
