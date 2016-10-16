@@ -1,5 +1,12 @@
  
 var io = require("socket.io-client")("http://localhost:3000");
+var stringmultiply = function(str,rep) {
+	var returnstr = ""
+	for(var i=0;i<rep;i++){
+		returnstr += str;
+	}
+	return returnstr;
+}
 //var socket = io();
  /*     $('form').submit(function(){
         socket.emit('chat message', $('#m').val());
@@ -25,7 +32,7 @@ var io = require("socket.io-client")("http://localhost:3000");
 	     } else {
 	     	name=ln;
 	     }
-	     process.stdout.write(name+": ")
+	     process.stdout.write(name+": ");
 
 
      });
@@ -35,8 +42,8 @@ var io = require("socket.io-client")("http://localhost:3000");
 			console.log("WARN:no name found");
 			//console.log(dat)
 		}else if(q[0] != name+":"){
-			console.log("\r"+" "*(name.length+2)+"\r"+dat);
-	     		process.stdout.write(name+": ")
+			console.log("\r"+stringmultiply(" ",name.length+2)+"\r"+dat);
+	     		process.stdout.write(name+": ");
 			
 		}
       //io.emit("my other event","I loged on");
