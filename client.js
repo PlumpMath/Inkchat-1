@@ -35,7 +35,7 @@ var io = require("socket.io-client")("http://localhost:3000");
 			console.log("WARN:no name found");
 			//console.log(dat)
 		}else if(q[0] != name+":"){
-			console.log("\r"+dat);
+			console.log("\r"+" "*(name.length+2)+"\r"+dat);
 	     		process.stdout.write(name+": ")
 			
 		}
