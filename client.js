@@ -28,11 +28,11 @@ var stringmultiply = function(str,rep) {
      rl.on("line", function(ln) {
 	    	     i++;
 	     if (i>2) {
-	     	io.emit("message to server", {string:name+": "+ln,message:ln,name:name,group:group});
-		process.stdout.write(name+": ");
+	     	io.emit("message to server", {string:"["+group+"]"+name+": "+ln,message:ln,name:name,group:group});
+		process.stdout.write("["+group+"]"+name+": ");
 	     } else if(i>1) {
 	     	name=ln;
-		process.stdout.write(name+": ");
+		process.stdout.write("["+group+"]"+name+": ");
 	     } else {
 		group = ln;
 		process.stdout.write("name: ");
@@ -45,7 +45,7 @@ var stringmultiply = function(str,rep) {
 			console.log("WARN:no name found");
 		}else if(dat.name != name && name != "" && dat.group == group){
 			console.log("\r"+stringmultiply(" ",name.length+2)+"\r"+dat.string);
-	     		process.stdout.write(name+": ");
+	     		process.stdout.write("["+group+"]"+name+": ");
 			
 		}
       //io.emit("my other event","I loged on");
