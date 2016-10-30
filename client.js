@@ -1,5 +1,5 @@
  
-var io = require("socket.io-client")("http://localhost:3000");
+var io = require("socket.io-client")("http://kazcode.com:3000");
 var stringmultiply = function(str,rep) {
 	var returnstr = ""
 	for(var i=0;i<rep;i++){
