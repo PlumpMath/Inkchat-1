@@ -1,5 +1,5 @@
  
-var io = require("socket.io-client")("http://localhost:3000");
+var io = require("socket.io-client")("http://kazcode.com:3000");
 var stringmultiply = function(str,rep) {
 	var returnstr = ""
 	for(var i=0;i<rep;i++){
@@ -44,7 +44,7 @@ var stringmultiply = function(str,rep) {
 		if (!dat.name){
 			console.log("WARN:no name found");
 		}else if(dat.name != name && name != "" && dat.group == group){
-			console.log("\r"+stringmultiply(" ",name.length+2)+"\r"+dat.string);
+			console.log("\r"+stringmultiply(" ",name.lengthi+group.length+4)+"\r"+dat.string);
 	     		process.stdout.write("["+group+"]"+name+": ");
 			
 		}
