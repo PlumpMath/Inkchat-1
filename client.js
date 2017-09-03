@@ -43,7 +43,7 @@ var stringmultiply = function(str,rep) {
      	io.on("message to client", function(dat) {
 		if (!dat.name){
 			console.log("WARN:no name found");
-		}else if(dat.name != name && name != "" && dat.group == group){
+		}else if(/*dat.name != name &&*/ name != "" && dat.group == group){
 			console.log("\r"+stringmultiply(" ",name.lengthi+group.length+4)+"\r"+dat.string);
 	     		process.stdout.write("["+group+"]"+name+": ");
 			
